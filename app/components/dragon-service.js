@@ -9,4 +9,9 @@ export default class DragonService {
             .then(res => res.json())
             .then(res => draw(res))
     }
+    getDrags(draw) {
+        fetch('https://dragon-duel.herokuapp.com/api/dragons')
+            .then(res => res.json())
+            .then(res => draw(res))
+    }
 }
