@@ -8,9 +8,10 @@ function draw(champion) {
     let template = ''
     champion.forEach(champion => {
         template += `
-        <div class="champs">
+        <div id="champs">
         <h3>${champion.name}</h3>
-        <img src="${champion.imgUrl}">        
+        <img src="${champion.imgUrl}">  
+        <button>Choose Champ</button>      
         </div>`
     })
     app.innerHTML = template
@@ -23,6 +24,7 @@ function drawDrags(drags) {
         <div>
         <h3>${drags.name}</h3>
         <img src="${drags.imgUrl}">
+        <button>Choose Dragon</button>
         </div>
         `
     })
