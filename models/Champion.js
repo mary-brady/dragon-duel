@@ -7,6 +7,5 @@ export default class Champion {
         this.class = data.class
         this.HP = data.HP
         this.attacks = data.attacks
-
     }
 }
