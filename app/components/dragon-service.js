@@ -54,6 +54,8 @@ export default class DragonService {
         else {
             alert('PLEASE SELECT BOTH A DRAGON AND CHAMPION! THIS IS NO GAME!!!')
         }
+
+        drawGame(gameId)
     }
 
     attack(attackStr) {

@@ -1,4 +1,4 @@
-import DragonService from "./dragon-service.js"
+import DragonService from "./dragon-service.js";
 import Dragon from "../../models/Dragon.js";
 
 let ds = new DragonService
@@ -35,6 +35,7 @@ function drawDrags(drags) {
 }
 
 function drawGame(gameId) {
+
     let template = `
     <div> 
     <div><img src="${dragonId.name}/></div>
