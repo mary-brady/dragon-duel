@@ -13,7 +13,7 @@ function draw(champion) {
         <h4>${champion.race} ${champion.class}</h4>
         <h5>HP: ${champion.hp}</h5>
         <img src="${champion.imgUrl}">  
-        <button onclick="app.controllers.dragonCtrl.setActiveChamp()">Choose Champ</button>      
+        <button onclick="app.controllers.dragonCtrl.setActiveChamp(${champion.id})">Choose Champ</button>      
         </div>`
     })
     app.innerHTML = template
@@ -27,32 +27,31 @@ function drawDrags(drags) {
         <h3>${drags.name}</h3>
         <h4>Max HP: ${drags.maxHP}<h4>
         <img src="${drags.imgUrl}">
-        <button onclick="app.controllers.dragonCtrl.setActiveDragon()">Choose Dragon</button>
+        <button onclick="app.controllers.dragonCtrl.setActiveDragon(${drags.id})">Choose Dragon</button>
         </div>
         `
     })
     document.getElementById('drags').innerHTML = template
 }
 
-function drawGame(gameId) {
-
+function drawGame(dragon, champion) {
+    // ds.startGame()
     let template = `
     <div> 
-    <div><img src="${dragonId.name}/></div>
-    <h6>HP: ${dragonId.currentHP}</h6>
-    <div><img src="${dragonId.imgUrl}/></div>
+    <div><img src="${dragon.name}/></div>
+    <h6>HP: ${dragon.currentHP}</h6>
+    <div><img src="${dragon.imgUrl}/></div>
     </div>
     <div> 
-    <div><img src="${championId.name}/></div>
-    <h6>HP: ${championId.currentHP}</h6>
-    <div><img src="${championId.imgUrl}/></div>
-    <button>${championId.attacks}
+    <div><img src="${champion.name}/></div>
+    <h6>HP: ${champion.currentHP}</h6>
+    <div><img src="${champion.imgUrl}/></div>
+    <button>${champion.attacks}
     </div>
     `
     app.innerHTML = template
 
 }
-
 
 export default class DragonController {
     constructor() {

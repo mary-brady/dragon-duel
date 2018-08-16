@@ -45,17 +45,18 @@ export default class DragonService {
                 dragonId: activeDragonId,
                 championId: activeChampId
             }
-            duelApi.post('game', gameObj)
+            duelApi.post('games', gameObj)
                 .then(res => {
                     console.log(res)
-                    gameId = res.data.game._id
+                    gameId = res.data.game.id
                 })
+            // gameId = res.data.game._id
+
         }
         else {
             alert('PLEASE SELECT BOTH A DRAGON AND CHAMPION! THIS IS NO GAME!!!')
         }
 
-        drawGame(gameId)
     }
 
     attack(attackStr) {
